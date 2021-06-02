@@ -13,6 +13,8 @@
 		B5E9E3CC266695B000DAEFC4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5E9E3CA266695B000DAEFC4 /* Main.storyboard */; };
 		B5E9E3CE266695CC00DAEFC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5E9E3CD266695CC00DAEFC4 /* Assets.xcassets */; };
 		B5E9E3D1266695CC00DAEFC4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5E9E3CF266695CC00DAEFC4 /* LaunchScreen.storyboard */; };
+		B5E9E3DA266788E400DAEFC4 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E9E3D9266788E300DAEFC4 /* Card.swift */; };
+		B5E9E3DC2667892900DAEFC4 /* ConcentrationGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E9E3DB2667892900DAEFC4 /* ConcentrationGame.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		B5E9E3CD266695CC00DAEFC4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B5E9E3D0266695CC00DAEFC4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B5E9E3D2266695CC00DAEFC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B5E9E3D9266788E300DAEFC4 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		B5E9E3DB2667892900DAEFC4 /* ConcentrationGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcentrationGame.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,12 +63,22 @@
 				B5E9E3C4266695B000DAEFC4 /* AppDelegate.swift */,
 				B5E9E3C6266695B000DAEFC4 /* SceneDelegate.swift */,
 				B5E9E3C8266695B000DAEFC4 /* ViewController.swift */,
+				B5E9E3D82667886A00DAEFC4 /* Model */,
 				B5E9E3CA266695B000DAEFC4 /* Main.storyboard */,
 				B5E9E3CD266695CC00DAEFC4 /* Assets.xcassets */,
 				B5E9E3CF266695CC00DAEFC4 /* LaunchScreen.storyboard */,
 				B5E9E3D2266695CC00DAEFC4 /* Info.plist */,
 			);
 			path = ConcentrationAppTest;
+			sourceTree = "<group>";
+		};
+		B5E9E3D82667886A00DAEFC4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B5E9E3D9266788E300DAEFC4 /* Card.swift */,
+				B5E9E3DB2667892900DAEFC4 /* ConcentrationGame.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,7 +153,9 @@
 			files = (
 				B5E9E3C9266695B000DAEFC4 /* ViewController.swift in Sources */,
 				B5E9E3C5266695B000DAEFC4 /* AppDelegate.swift in Sources */,
+				B5E9E3DC2667892900DAEFC4 /* ConcentrationGame.swift in Sources */,
 				B5E9E3C7266695B000DAEFC4 /* SceneDelegate.swift in Sources */,
+				B5E9E3DA266788E400DAEFC4 /* Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
