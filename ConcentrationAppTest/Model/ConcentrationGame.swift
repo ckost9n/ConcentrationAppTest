@@ -37,6 +37,7 @@ class ConcentrationGame {
         for _ in 1...numberOfPairsOfCard {
             let card = Card()
             cards += [card, card]       // Два раза вызвать метод cards.append[card]
+            cards.shuffle()
         }
         
     }
