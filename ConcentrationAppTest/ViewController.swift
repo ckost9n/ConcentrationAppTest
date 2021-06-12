@@ -15,18 +15,23 @@ class ViewController: UIViewController {
         return (buttonCollection.count + 1) / 2
     }
     
-    private var emojiCollection = ["🦊", "🐱", "🐺", "🐗", "🐋", "🦈", "🐙", "🦑", "🦍", "🦏", "🐄", "🐕"]
+//    private var emojiCollection = ["🦊", "🐱", "🐺", "🐗", "🐋", "🦈", "🐙", "🦑", "🦍", "🦏", "🐄", "🐕"]
+    private var emojiCollection = "🦊🐱🐺🐗🐋🦈🐙🦑🦍🦏🐄🐕"
     
     private var emojiDictionary = [Card:String]()
     
     
     private(set) var touches = 0 {
         didSet {
-            touchLabel.text = "Touches: \(touches)"
+            updateTouches()
         }
     }
     
-    @IBOutlet private weak var touchLabel: UILabel!
+    @IBOutlet private weak var touchLabel: UILabel! {
+        didSet {
+            updateTouches()
+        }
+    }
     @IBOutlet private var buttonCollection: [UIButton]!
 
     override func viewDidLoad() {
@@ -42,10 +47,20 @@ class ViewController: UIViewController {
         }
     }
     
+    private func updateTouches() {
+        let attributes: [NSAttributedString.Key: Any] = [
+            .strokeWidth: 5.0,
+            .strokeColor: UIColor.red
+        ]
+        let attributedString = NSAttributedString(string: "Touches: \(touches)", attributes: attributes)
+        touchLabel.attributedText = attributedString
+    }
+    
     private func emojiIdentifier(for card: Card) -> String {
         if emojiDictionary[card] == nil {
             let randomIndex = Int.random(in: 0...emojiCollection.count - 1)
-            emojiDictionary[card] = emojiCollection.remove(at: randomIndex)
+            let randomStringIndex = emojiCollection.index(emojiCollection.startIndex, offsetBy: randomIndex)
+            emojiDictionary[card] = String(emojiCollection.remove(at: randomStringIndex))
         }
         return emojiDictionary[card] ?? "?"
     }
