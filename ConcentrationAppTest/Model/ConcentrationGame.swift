@@ -13,17 +13,7 @@ struct ConcentrationGame {
     
     private var indexOfOneAndOnlyFaceUpCard: Int? {
         get {
-            var foundIndex: Int?
-            for index in cards.indices {
-                if cards[index].isFaceUp {
-                    if foundIndex == nil {
-                        foundIndex = index
-                    } else {
-                        return nil
-                    }
-                }
-            }
-            return foundIndex
+            return cards.indices.filter { cards[$0].isFaceUp }.oneAndOnly
         }
         set {
             for index in cards.indices {
@@ -46,26 +36,6 @@ struct ConcentrationGame {
         }
     }
     
-    
-//    func chooseCard(at index: Int) {
-//        if !cards[index].isMatched {
-//            if let matchingIndex = indexOfOneAndOnlyFaceUpCard, matchingIndex != index {
-//                if cards[matchingIndex].identifier == cards[index].identifier {
-//                    cards[matchingIndex].isMatched = true
-//                    cards[index].isMatched = true
-//                }
-//                cards[index].isFaceUp = true
-//                indexOfOneAndOnlyFaceUpCard = nil
-//            } else {
-//                for flipDown in cards.indices {
-//                    cards[flipDown].isFaceUp = false
-//                }
-//                cards[index].isFaceUp = true
-//                indexOfOneAndOnlyFaceUpCard = index
-//            }
-//        }
-//    }
-    
     init(numberOfPairsOfCard: Int) {
         assert(numberOfPairsOfCard > 0,"ConcentrationGame.init(\(numberOfPairsOfCard): must have at least one pair of pards.")
         for _ in 1...numberOfPairsOfCard {
@@ -76,4 +46,11 @@ struct ConcentrationGame {
         
     }
     
+}
+
+extension Collection {
+    
+    var oneAndOnly: Element? {
+        return count == 1 ? first : nil
+    }
 }
